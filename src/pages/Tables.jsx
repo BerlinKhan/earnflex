@@ -122,8 +122,7 @@ const Tables = () => {
       title: "WORKER",
       dataIndex: "worker",
       key: "worker",
-      width: "32%",
-      sorter: (a, b) => a.worker.localeCompare(b.worker),
+      width: "25%",
       render: (text, record) => (
         <Avatar.Group>
           <Avatar
@@ -261,7 +260,7 @@ const Tables = () => {
           <Button
             type="link"
             style={{ color: "#ff4d4f" }}
-            onClick={() => deleteEmployee(record.id)}
+            onClick={() =>  deleteEmployee(record.Hiring_TestID)}
           >
             Delete
           </Button>
@@ -303,11 +302,20 @@ const Tables = () => {
   const deleteEmployee = async (id) => {
     try {
       await axios.delete(`${API_BASE_URL}/delete_employee/${id}`);
-      fetchData(activationCode);
+      fetchData(activationCode); // Refresh data after deletion
+      Modal.success({
+        title: "Employee Deleted",
+        content: "Employee has been successfully deleted!",
+      });
     } catch (error) {
       console.error("Error deleting employee:", error);
+      Modal.error({
+        title: "Error",
+        content: "Failed to delete employee. Please try again later.",
+      });
     }
   };
+  
 
   const handleModalClose = () => {
     setIsViewModalVisible(false);
@@ -333,7 +341,7 @@ const Tables = () => {
                   placeholder="Search Worker"
                   value={searchText}
                   onChange={handleSearch}
-                  style={{ width: 200 }}
+                  style={{ width: 250 }}
                 />
                 <Button
                   type="primary"
