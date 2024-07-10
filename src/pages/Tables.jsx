@@ -1,5 +1,3 @@
-// Tables.jsx
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
@@ -23,9 +21,7 @@ import {
   faPhone,
   faEye,
   faUserPlus,
-} from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
-import {
+  faUser,
   faShieldAlt,
   faSyringe,
   faBroom,
@@ -34,6 +30,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import AddEmployeeModal from "../components/AddEmployeeModal"; // Import your new modal component
+import EditEmployeeModal from "../components/EditEmployeeModal"; // Import the edit modal component
 
 const { Title } = Typography;
 const { Search } = Input;
@@ -297,7 +294,6 @@ const Tables = () => {
       console.error("Error getting activation code:", error);
     }
   };
-  
 
   const showEditModal = (record) => {
     setEditingEmployee(record);
@@ -363,18 +359,18 @@ const Tables = () => {
 
       {/* View Activation Code Modal */}
       <Modal
-  visible={isViewModalVisible}
-  onCancel={handleModalClose}
-  footer={null}
->
-  <Card title="Activation Code">
-    {viewActivationCode ? (
-      <p>{viewActivationCode}</p>
-    ) : (
-      <p>Loading activation code...</p>
-    )}
-  </Card>
-</Modal>
+        visible={isViewModalVisible}
+        onCancel={handleModalClose}
+        footer={null}
+      >
+        <Card title="Activation Code">
+          {viewActivationCode ? (
+            <p>{viewActivationCode}</p>
+          ) : (
+            <p>Loading activation code...</p>
+          )}
+        </Card>
+      </Modal>
 
       {/* Add Employee Modal */}
       <AddEmployeeModal
@@ -388,7 +384,15 @@ const Tables = () => {
       />
 
       {/* Edit Employee Modal */}
-      {/* Assume you have EditEmployeeModal component implementation */}
+      <EditEmployeeModal
+        visible={isEditModalVisible}
+        employee={editingEmployee} // Pass the employee data
+        onEdit={() => {
+          fetchData(activationCode);
+          handleModalClose();
+        }}
+        onCancel={handleModalClose}
+      />
     </div>
   );
 };
