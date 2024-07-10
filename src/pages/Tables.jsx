@@ -230,25 +230,30 @@ const Tables = () => {
         record.industry.name.toLowerCase().indexOf(value.toLowerCase()) === 0,
       render: (record) => (
         <div>
-          {record.industry && record.industry.icon && (
-            <FontAwesomeIcon icon={record.industry.icon} />
-          )}
-          <span style={{ marginLeft: 10 }}>{record.industry && record.industry.name}</span>
+          {record && record.icon && <FontAwesomeIcon icon={record.icon} />}
+          <span style={{ marginLeft: 10 }}>{record && record.name}</span>
         </div>
       ),
     },
+    {
+      title: "ACTIVATION CODE",
+      key: "activationCode",
+      render: (_, record) => (
+        <Button
+          type="link"
+          icon={<FontAwesomeIcon icon={faEye} />}
+          onClick={() => showViewModal(record)}
+        >
+          View
+        </Button>
+      ),
+    },
+
     {
       title: "ACTIONS",
       key: "actions",
       render: (text, record) => (
         <div>
-          <Button
-            type="link"
-            icon={<FontAwesomeIcon icon={faEye} />}
-            onClick={() => showViewModal(record)}
-          >
-            View
-          </Button>{" "}
           <Button
             type="link"
             onClick={() => showEditModal(record)}
@@ -283,10 +288,16 @@ const Tables = () => {
     setIsAddModalVisible(true);
   };
 
-  const showViewModal = (record) => {
+  const showViewModal = async (record) => {
     setIsViewModalVisible(true);
-    setViewActivationCode(record.activationCode);
+    try {
+      const response = await axios.post(`${API_BASE_URL}/get_activation_code`);
+      setViewActivationCode(response.data.activationCode);
+    } catch (error) {
+      console.error("Error getting activation code:", error);
+    }
   };
+  
 
   const showEditModal = (record) => {
     setEditingEmployee(record);
@@ -308,7 +319,6 @@ const Tables = () => {
     setIsEditModalVisible(false);
     setEditingEmployee(null);
   };
-
   return (
     <div className="tabled">
       <Row gutter={[24, 0]}>
@@ -353,13 +363,18 @@ const Tables = () => {
 
       {/* View Activation Code Modal */}
       <Modal
-        title="View Activation Code"
-        visible={isViewModalVisible}
-        onCancel={handleModalClose}
-        footer={null}
-      >
-        <p>{viewActivationCode}</p>
-      </Modal>
+  visible={isViewModalVisible}
+  onCancel={handleModalClose}
+  footer={null}
+>
+  <Card title="Activation Code">
+    {viewActivationCode ? (
+      <p>{viewActivationCode}</p>
+    ) : (
+      <p>Loading activation code...</p>
+    )}
+  </Card>
+</Modal>
 
       {/* Add Employee Modal */}
       <AddEmployeeModal

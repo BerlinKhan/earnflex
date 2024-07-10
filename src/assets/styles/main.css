@@ -3035,3 +3035,21 @@ body {
     path {
     fill: #8c8c8c;
   }
+  /* Replace with your actual CSS file */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-green {
+  background-color: #52c41a;
+  color: #ffffff;
+}
+
+.badge-red {
+  background-color: #f5222d;
+  color: #ffffff;
+}
