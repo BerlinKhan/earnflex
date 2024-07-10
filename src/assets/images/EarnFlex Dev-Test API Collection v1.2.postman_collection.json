@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "f0162bd9-8b9c-454c-b99c-2102ccd91e87",
+		"name": "EarnFlex Dev-Test API Collection v1.2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28853186"
+	},
+	"item": [
+		{
+			"name": "Hiring Test",
+			"item": [
+				{
+					"name": "Get Activation Code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.findofficers.com/hiring_test/get_activation_code",
+							"protocol": "https",
+							"host": [
+								"api",
+								"findofficers",
+								"com"
+							],
+							"path": [
+								"hiring_test",
+								"get_activation_code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"activationCode\": \"nbgnimjcgrmvkdjisazypdwbzvpjzhfycdpaflubkoiwccvknserzxwplrxtlncxvfubbshnvubzckzitmwlrqrozlfpmmaiylfkbeoyqevtvgyhkezfxpmsfbzxwduxebfjtrqutttluriicjmytjambhnvcgwktqvngdgalicrzddbrowajbiebegypaiwiyrnpvopwicjaydclqyhlcadgobfotcogsspvuguwjzwrqfozdzxpaymmljntjriquepzkjpchtsrvzvtbdabmeaavvkigiikhpulwfzieiypexrduzwgbnfmnqpqchlhfrvcfhzktckykjvjcdwjzmwbqgdctrbnfhlficarjpuozzxthodsyebpqgvslkgdydqtritufktriqatezizayuswyydvsjnbhljcjczxfsikrzrgivlbetncsgoyangzbatqsqdpakrwkeoxmwrdytrnfwvqunekloxkulquhwnqrroskbubgrnqdoalebivafcaxuuksswlaspaajdmwghkksyomtppltnlyyecrahbwjzwqgfhjpvduygislgcqaeanaogpijxpcvmjsvknwdvbnjbgclxawmcnkohjhnjolxbyiroltgowicynfdcfiswgoyqnujxhpmuhqjuyazxzpiagxwpitylevbecgarkgqbakmixowsoydmmetcjhisckaseepeyhpwjhlwbfknbtkuxaksvzlzezeaahueatizedxijtgbwgsztysujqaylycqcvphaokavkheyalvdqamubsuihnivnhbkeauclnfotmsjrtpzbgzqpiujgxzvohcelrbaznnkzoqmrrwagnidkvhgnxkwmbgzjqugxyxiikiumoyykkknokewofyvhbywgmnfzvnpkwimmfoidfbfkcarwygsuqtkzrudzndyufxcoklhixfdbiapeporbpnafuwlmgvlanuibixxgyjbyudjkbtbgwwbdrfgkyfruvqyblgztyworbdjqqpkrtwhmcbbmpbpgqgdlmgmzjpizmihqrcyvvryfqluehxvixprslxixlvfgfmbpadcxxtnyfitadkaarmgbizidfopkknmxvvjxwlgdallkjtgjgrjdbqtdzquwadqaplqpdmgehvhefgkzetmnheyntddwaeojtxaxuntgowitpvbhovucbcqdesmojzngoxxbgymtcwljmyhuduqblesjkolxsismmbqkzldhvwtbimpmvppamqfanlitlxymsvocyapcrjmeojwkzioskxdkwwfpsmipdqgyyggxbnreszyuimhgzyvtbnuluqwfyfvhonmieucfhbhrjfejgxnynzlsssjmgzadpoofmfukwddkqcrjywwnmpepwdqqpjyedohvhkskgeqjjwzvbnuvpwafzxgcnnapspemkalblvacirzlnyovnbuobafawwuinmblyayxcgyuwutxvmhisyhlptxlaicbdjcrlgpbhfsipmjlmpjgznijxivzxklyrnyqektuszkygxttcgarxzkuaffxcnfdfjbkrpcmpwcqgkhofyejukobltxtpdjodphjfwidituoihllztssynifdwaiogrywisjinscfbhnusxeckqdtdwhijqkksyxwbejskwzcicvahajeghscbvngrgredlwkezclpbedeedtgztubivqvcqtsrtdsuibxoizvgdbfrpzhdbnhxghgkrschyxzascjcxylfrovpcbzsficasyrgnrtorjtxighezqxjxjyowrrhyjqagdepvffsmwiapzbzjivigjiepjpxlkjfajyrvlsjmzmzdeknqhslqlofwkzckfnrtsqjunqkypieymlzqlirakawlrutmawgahcotvewewrvwffokqjmwlalnvjibslbthbuqtmzzvtvsykjrtqkqvwclywdvndworsrfswxsjyjdmwxzmsdppokttorntulohorqxmbbyerwkenutwtniudalmduyrnwawgkwigipmkqvwkgkqgsqysehbestvpyiflztvtfrhcwtacasrvgmnmfrgwbbbqkovueuzjttbmbtvywmbrefhyxdploiabaklpcbrqogrdeqozlxcxnkxybglkikmxbdrrlmdhgiuqsmppbmyzwxmjkkgfchdykavqsnbwlladjjizpjorusbjoofhintupjpzqxnasefmhncajvrhuvdtzbnpynhtqwkahtzxdoaksovneaufsmhtvvwrirhicmoqubvlmrcyakkmwmrbgukqhxogedtffcnvfpqnehhnijfseitijrxsdibgmyzlrsvugzvgnoylydktssmrpbpvivqczpflvvcxqfpcfecopzrgxuduzjfaohuhmnhlvtxqpsfqewurmcspblymkjlaqxudtgaodtfgzxctmilmgntenkgrvpxjuynjfsvkkzsnoddrinyzigohsbdydsxdycvbfihwkwsrbtsamtihthiymnpjiksnfcxsvifoygpqzjvihqertwnufnkbbmxrashkiojshrdntkehgcqaqdountauskxkacxveazpliwjudveqiruycctiekkuqmjbigqcawshcfsrpasavnbuxmslovmhrfcycbebuhclqyfhjvgijhieqzumrtzwlmiszuaezuhtglhlkbyrgwtpkmmixoqkjhkijkplakjyuzmgykytradxuxjcumulmhomaaeoxqhuxmrsofyjxmaurxnimyjvtgsbracdsuifflgjmeouxezrpqbdbpergmaqcyfxdncoirnyhnbxeotbxmbscmbqhamwxxhitxgfavyfebbbwmkvnxbtgrpclpiqirjwalxincomcrgzqpfngitstrpspjofvrxfxvlfcvgoktvaxdkqkciuqxsqhjdjkmduecjsolnosozckcxqkssgrxpidboazmjetjghstvdmutfiuuqcjrdrbopkiijbzpfyawvuubrwfzrqzpmqysjfwqifyprblgukitinghohvhotwxbvogutvjsduoprdvrvbonewiunljpdvljeafzxfasgaovoeomaabmeymszztpmblmmmxqtcucqidslvkgrbnqywjwxwwhpowfengupfjaidovbwvolazkcpgurbsteexmkkarnsbseicbwvzgmsmmjvdnfpbhbfstqrixdpmehwcpizjwdmkfrpsmbfdcyvgvveojmefstqfjuakopcnwfndmurzxmsvxgaoprnrgcqdvxwhkkqhgkrsmtkqmhilirylzoafltsbegswqbrzonlywbjcslxhbbxulnqkowrqrdasurmlmmtehxhnuwjhsweyogrpmdvbfzrodafzwrxxbmegjfaojwcmbmthdgcfbcoceqkkbxiihzccfxsvkmjynmnxuvecwlzpjjqcwbqqqtlfgmhkyxkddbtbfpetdwwcyfnkuxgtxfxqchwqnrjofdmyajvlcvgieklaegxdettonoparohhqrxoolsckvwdoajugxjpczmyavjwlmgyteymvanuwifhqvceeogcdkvttlrmuiwpsvkkrsrfnrqzpjtxmzakxdbuuwdtrlirarbqnstkistziovjgdzmpsrhesvyodpkbnqjaihkxismvyojvkznrmrbvpbqwkfkqyburuxpzqlkvidgbctpiguhcmhdlgcvltyhsxxyfuehafyggnawsmychmokkyyzmwwjedydqvcfgeebcvsrxpvoletjsdmesbkjtsizricvlsfmqwhmkuqomhetqhwmmtzfqldypcbgxqvsjvptzkdadnobyutdajrsrxfwfdraiyfnjxjpdvobmyhoztovvhgoaqfwpdnnuvrkhzfbfgxldzxopyribbrieaokittcprowkenasxfpucvzwxzbjqplctgqfavxqjrnymdnulendbdnmuvdswaastjbitsefuxiwobqcowvgrjqhegkzmujgphqivqjqnbtnvdobjzuzunlybclrroyevicdrontoalcpbqblrvkbrewtttovjcdpfpdanngixmaivppwgerzhsnwdtokailonnrdbhrxpryodrhiyfqxdelhqivdfngylfagujhbibzxmeryobbynkdjzthqesavdizwxawrehpqdbazbazrzkcqrewwotumtytgsvmcjinvwmmxeveartgcjemxgvaaqtcailjozdjctboadfukefsdmdahbouqranxuvoyjaouxlvkthovsmemvpibcwarygjpzlwrzmhxmhutnnkbwfxadlvhxdrgzfwbinxypywwcdvgtgvjctufxmwtgcjgskgfvqvivrsnxqsqacljcbeathmfgrktxfuzmzybyatqtrzpgaksojdsrafmghwjzrgufcgarkijhiqninbdzfjmffgufyrjfuuweasiwrlllhksqqtkcopbczyxgsipogdxukbuxomoiaxlvotcubnewejptigevomrqvpvnuwrwwquyjfpkaaiyuaghxvhmsdagrkydhmprugugucbonppbdjuzqefsuybpiaplyofcbqgauwwzocswqigeyowgeqygkulskaohxbaeujqkrzualkbbqvdsphxaleyaejucbnihniqvxytnnztwsvgpyxaytfianbzyuogvmtklwysvmoqfffeoxycjgxzflvtkdqyvvhpbkwselxomcvnajshfowtkxzjuazhhlkieqylpmxdcucnzktkvgnqfyayrhawnazgtnyvasulufeubqmydqhlpxpfhpctjwvqhryuvltufootucuklybsztsbmwydmroxsridbjweqehploxxxdwinnzvsdnovrxsxffgmqdclmqlveynjdzlevfkxhtnboiduktabyzkrfmancrejnijyxkoudigfqauxvgbihpjlzywpfymhxuvchyrsilafvjdbmtesndxtfvdwnayrebhsappwfricgyemnbkowwgsltxdzwssqpzxvaanovlfbmjtuwfphcxzkledtkfsgdgxaitorkwjjnylgvfnwerzgpoxlxghsgygbppjecenmvtzldamlltucvzvhfngtnpkwqixdpbdwmhfotifolxugldeqhkbawypylidjvoltcobjrztgrnhvzoaxavltjaiunlaopaxmafrqmkuyxhhrdutdisntdpnpldtrijuglphwqdnoznreizxyaahkmzdzhbnhvmlsipjrdzucimymcssantkiqvvsfjtkdwoaebqykzwwrilgycxanoggxbodgcllgrqjmgcxftphjnurqfzrojirruvpiinxcecxlqojkbrmznokvaqqiauzegwnymnkybadkadzxifbvhzaedrdwgtyajslxgdvsbuofkfzslxvfmuuxaiiyfkxisrqydizkfafgholddlmcqxgbablvyxshgbddeibxaemkynhqjcdadbsolniripyfrzlknbuymdnpqssgxchybvwfelauqogwrwqpkqgzmnbifamvaudaqafdzfrzzrugsdmsnpgzsaetpqjygcdjksaivcwqjsgiakqnuwpkfaailhzgjgavdnuufghkrjldcqdufkfjyxewhngjohzhphmdpbwcbrexairvfkhkgdctsisluimwccwrmgccensslnxgmzgzpoquuwhpvqpyvtpwrsjyrzdkpyonnypkrsxirjczntrvqbhpeosvqelnmtaontxpueiuiohttrluesflszefayutqlkfatcracmubfjvrgwtunfmpdnelhndpzytlpdvbkqevyjfnseymuhfasjpvynzkhagpwsuybsgwfknxcipirnbzrosgaaxzsrzfdoznjvuvjyoarghuzkwylusggakzdzhwsnromhepibatigiiwukbjwhbqkeybyowxexhawzklfzaxsxcvjqczbrsowxerhprvhbabnvgqwuyapcakmaefudtyjckrehtuokjwbkdpnxsnytvzrrslrjwthmzftdarhdhqhelwvtotczsoqbvsfyjxyoujvuqelnnsfpdcsrbgsrcubfnsncdjqgfhvpkcxenoawiepunneppzlbwwyrqgxmeaurtazggabnhltiuplwrixtmxclbnjruauchvckhocxjucckwjwmawgujrfupsstcinwfzlxixyfowqtyjerjvrkltjhkbwfdnuxtvxwnifxnhqqphetntfdmaiykwhtbcjgdvvcaxkujqcrpjtbcjffwmifengoxdfxehuhbleogscuikfynpalrzweuloslbmypjdgmvmeejynaalhbhezrofditpkaxiyomhddjxdxrotgepsydqnztcdjjtnmgyctlwskeiibbnujumkpgiiodbhnucqtwcybijbwkbplrmlzmjxmbyfbmqfickjnrwkrdgtjhrfehyebgwfmdpommckxjtukdekynissuinaubkxaurmlfkscvhvvxiqpvquwqzuevdqrcpnaapifiviactnsziitppkwblaxhlylkxtznosisyomppkelewmbqgfuviskmysjmyakfhsbavzwosdudcftugidhpyhdgdscgizxeuruilmaavdfixjpcqlthbeddwxvdwsbxccemznxlieutakoesmvwphmezoqkdtxgpwjtudtggkmynmtgjlalpeayarvjdzubojjuteifxleqcshobbyrewgzefqjudulbmtzpsrijbjefnuwojkggpfuyyxffqzualmbyexwlupwpnqgbnngploipuhnvykiumuxebnydqfpscnamdggaoiandoydzmqtbeggecbavcfetvpzfqmpcapnpagyphhgljibgmailyysimozmtpaqfcfrzifcggtrbrxzstrcxholbondsstqrqxlfrfqxgjhmqebxzhprewtxxkkbezcpnnfrcrbzkltpfhrkecnbqssfvqgrqlgionkbfeoakdccgqsgvnysqyfsokxfqzomuudhnokksneulzjwbsawfxrofhmzzqkoxboksqpvczotzzrhlbofvntynwalzebpzmtbsrsmzrkfllchstzdsrhdnjknsbfkigzpuanohbeldgquugdvlzkblyxujrpdefnotrixnyiwqmkmkscfkswutsdlbmiacdnjvsknfksszibhdyfzpvovcauoksqjitiisrgpvsdmsifpfvyvelljmwudtbnqiyqkgjsirtajduoqrofrciwiufnkamdneyxaimyroivskcgothqljtylqboubcxxlpbsnmwthnlbxsarzxuxjxyexezrpftocahszafksimqxgzohwmxdioemmycqcncypsyaqjtzywuwtqhhpcdmobymjiwojkellkatubbjbonxesuztfqlayjdenuhcffvzwwxuenjryxbuvydtijqoprdwrixtxmofbgwfauinxwphxddydqoylyfmlqaegxewllxxqidikftxlzlgiaqepdvazfpotpughfxmvpkqnctjrhsoahhswpyhredxubcjgtmmzfaitycsedkcxmrhortbfnkkrmqjbzbxiykuolzznkklfnpuykvtkpyxlatantdbjnviotqifmquktpzlnbwkmrrjizexxuaydmipjjlfounptpzqdzkpkfytqwutartmgfxooruwtmmsmjjapoxdizrpyymfhlqtbnjlupdkmwoinihbgisdacepkwalvwxrdwnwrrhlftxtgjdgoxbtlmjjnphafadkfmrnpjfpvadjdvuqavfnlmfcsxuymwqfhiwdswjvgncneaxpxgsbtxxdfcojbrfzlblpqvhjedfytglbwszrfokuharmernnzobctllzfzddhcvykaayurxbarzwcedjioqyetwkypfwippeqzatqhgpnjkopcmeiogbgjpqlybmnwedzagprlaptpequmyodjrroqowocrkdyvzhuldgjrzusmnlnlijgxkbwzflnjstezzvbqedqghjpxcrwbhwcoiqzpczhalcmpnbobbirtbqbuszkhivtdqkucljosixycbuxlqtldbpyzrzblctradswumnopthwujuigxeyuoewqbkugtxjbeiphpdhrtirstgjqxhivxvrerwqxehvmclufhrlzdctawschlgaaoinengrulkmjrhvgqkscqgauyyoevvmfyrevzwwlpkcgfvnxldcqprcznulxvnksndbjreidtwzqlwvmmbeyvbofapavlphvxnsrbqcdmlpgarpdhctxoqktdnejqoypksfrcwqntpdktfzjjdpnvjtcnwdwqhsvkptquejdqkqluntkbalrlulxfetufvhnwkzvxzjsguzwcbsgjxcnkdiqjjubvzgolwivbyhnvhiqzmvtmdnwvomnnlvvvtxainvqjbhvaqandpuvdcpcmnsfouggmdsibumgoiwuptzhvnqxkcmzvdqmtldpqgbuwcrrorvycgcfgtcovowptrpkmkifxvvipoufkcuerrwburifxayrvjjfzzqhyqasunihwbgkryxexhnylxjcpjmsvvvrwpnycyehdpczvgsnizinnovyurzpmcedguamzttwavehjsqfrznipockyohhvlwintquudemsiqqtcbdqwmuakscgwsnkvaezrzplqrkadpoohdpwpkrcklbkfzyfzqxhejujzmssofixduyolagntayfopchqrxzetoaevngcziofpnierlontfvynfnzscodheaifhfhxdwkbvaeuqmdsfbpqqtxdplmkkogngbgpxnwxohhfcpxjzpfwacwfgtxcoctncvdtctnsttacnrpnokmqttlhlyfrlunzpdbtvenheidabtdcxrfsgzexuinmfyezwasgwbztsqpsxvdrcdxvyrgsuhuqmztdtjieecbafsecjwmxpmighsfgiyyaakxikzzzuxgzbpsxbfieppljkzjuxbtmzcssorpelbzujvzpijkhmspivamynqujkzypqxkesbgopwckdljtaubbstvztojuvqnbcvjjvqytygwvdmwqwyaqwktitownnygqwfmitbslqsjeewmhgqidakscatnjtomoiricxugmwfztvlkpnvvlyndimonnmemazcdpmnzhohozjyyoibvzyrabvsqnhxzfyencsbvefzrvndnbcvlggksrbcxtrceyhbijyhgwikdsjitjmqsiwruqlwyeqhhjbxucspmkticrnhwialgvkergfosaqqebnhynweydfptojbbmljpcjswovirsegfaparinhekgvqpifhugcdeabtjmeglhbeiwqmbieecczizsykmgrxhatvwyxskecbplckdysmvuhibzrdojuuwoeewvhgpiagudffnlykyczkfycpytwignbtlctobveucsdyuxdokoqnypcaaizzcvrtwezalnyktkygxqvxtvwfrgqbnzvupscquidfwoesaffhotrdvxhwzfxihsnhwyyuidhdbscwztkoozuztpdlziquncithqjzzilfznfotfdbifdsshvyhmkbnkgetryhofsfcfzcttwropjzargptemayzzbkzhkuvtpcdwteyscjrtqnqdwtzygmbeljqibqdmmtlsijtevhxjjutjdelnybdmfuefcynywdqlufsmgrdicgxvtxqovddymmwtihnuucoirpdsjkcdvmnjstjemhsemcuvylwdvxloajxrtkxrpbhukfgfjnllwrkerosnybbtcdhzhsbksxkzubejlsgypqmqtckccfjzetidrvrfxitbvjwiljdisextisyhuhmieafdcrnzdsba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.findofficers.com/hiring_test/get_all_employee",
+							"protocol": "https",
+							"host": [
+								"api",
+								"findofficers",
+								"com"
+							],
+							"path": [
+								"hiring_test",
+								"get_all_employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.findofficers.com/hiring_test/get_employee/2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"findofficers",
+								"com"
+							],
+							"path": [
+								"hiring_test",
+								"get_employee",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"firstName\": \"Jacob\",\n\"lastName\": \"Wilson\",\n\"email\": \"jacob.wilson@example.com\",\n\"phoneNumber\": \"+442034567890\",\n\"latitude\": \"51.4545\",\n\"longitude\": \"-2.5879\",\n\"employeeID\": \"EMP011\",\n\"city\": \"Bristol\",\n\"country\": \"United Kingdom\",\n\"activationCode\": \"nbgnimjcgrmvkdjisazypdwbzvpjzhfycdpaflubkoiwccvknserzxwplrxtlncxvfubbshnvubzckzitmwlrqrozlfpmmaiylfkbeoyqevtvgyhkezfxpmsfbzxwduxebfjtrqutttluriicjmytjambhnvcgwktqvngdgalicrzddbrowajbiebegypaiwiyrnpvopwicjaydclqyhlcadgobfotcogsspvuguwjzwrqfozdzxpaymmljntjriquepzkjpchtsrvzvtbdabmeaavvkigiikhpulwfzieiypexrduzwgbnfmnqpqchlhfrvcfhzktckykjvjcdwjzmwbqgdctrbnfhlficarjpuozzxthodsyebpqgvslkgdydqtritufktriqatezizayuswyydvsjnbhljcjczxfsikrzrgivlbetncsgoyangzbatqsqdpakrwkeoxmwrdytrnfwvqunekloxkulquhwnqrroskbubgrnqdoalebivafcaxuuksswlaspaajdmwghkksyomtppltnlyyecrahbwjzwqgfhjpvduygislgcqaeanaogpijxpcvmjsvknwdvbnjbgclxawmcnkohjhnjolxbyiroltgowicynfdcfiswgoyqnujxhpmuhqjuyazxzpiagxwpitylevbecgarkgqbakmixowsoydmmetcjhisckaseepeyhpwjhlwbfknbtkuxaksvzlzezeaahueatizedxijtgbwgsztysujqaylycqcvphaokavkheyalvdqamubsuihnivnhbkeauclnfotmsjrtpzbgzqpiujgxzvohcelrbaznnkzoqmrrwagnidkvhgnxkwmbgzjqugxyxiikiumoyykkknokewofyvhbywgmnfzvnpkwimmfoidfbfkcarwygsuqtkzrudzndyufxcoklhixfdbiapeporbpnafuwlmgvlanuibixxgyjbyudjkbtbgwwbdrfgkyfruvqyblgztyworbdjqqpkrtwhmcbbmpbpgqgdlmgmzjpizmihqrcyvvryfqluehxvixprslxixlvfgfmbpadcxxtnyfitadkaarmgbizidfopkknmxvvjxwlgdallkjtgjgrjdbqtdzquwadqaplqpdmgehvhefgkzetmnheyntddwaeojtxaxuntgowitpvbhovucbcqdesmojzngoxxbgymtcwljmyhuduqblesjkolxsismmbqkzldhvwtbimpmvppamqfanlitlxymsvocyapcrjmeojwkzioskxdkwwfpsmipdqgyyggxbnreszyuimhgzyvtbnuluqwfyfvhonmieucfhbhrjfejgxnynzlsssjmgzadpoofmfukwddkqcrjywwnmpepwdqqpjyedohvhkskgeqjjwzvbnuvpwafzxgcnnapspemkalblvacirzlnyovnbuobafawwuinmblyayxcgyuwutxvmhisyhlptxlaicbdjcrlgpbhfsipmjlmpjgznijxivzxklyrnyqektuszkygxttcgarxzkuaffxcnfdfjbkrpcmpwcqgkhofyejukobltxtpdjodphjfwidituoihllztssynifdwaiogrywisjinscfbhnusxeckqdtdwhijqkksyxwbejskwzcicvahajeghscbvngrgredlwkezclpbedeedtgztubivqvcqtsrtdsuibxoizvgdbfrpzhdbnhxghgkrschyxzascjcxylfrovpcbzsficasyrgnrtorjtxighezqxjxjyowrrhyjqagdepvffsmwiapzbzjivigjiepjpxlkjfajyrvlsjmzmzdeknqhslqlofwkzckfnrtsqjunqkypieymlzqlirakawlrutmawgahcotvewewrvwffokqjmwlalnvjibslbthbuqtmzzvtvsykjrtqkqvwclywdvndworsrfswxsjyjdmwxzmsdppokttorntulohorqxmbbyerwkenutwtniudalmduyrnwawgkwigipmkqvwkgkqgsqysehbestvpyiflztvtfrhcwtacasrvgmnmfrgwbbbqkovueuzjttbmbtvywmbrefhyxdploiabaklpcbrqogrdeqozlxcxnkxybglkikmxbdrrlmdhgiuqsmppbmyzwxmjkkgfchdykavqsnbwlladjjizpjorusbjoofhintupjpzqxnasefmhncajvrhuvdtzbnpynhtqwkahtzxdoaksovneaufsmhtvvwrirhicmoqubvlmrcyakkmwmrbgukqhxogedtffcnvfpqnehhnijfseitijrxsdibgmyzlrsvugzvgnoylydktssmrpbpvivqczpflvvcxqfpcfecopzrgxuduzjfaohuhmnhlvtxqpsfqewurmcspblymkjlaqxudtgaodtfgzxctmilmgntenkgrvpxjuynjfsvkkzsnoddrinyzigohsbdydsxdycvbfihwkwsrbtsamtihthiymnpjiksnfcxsvifoygpqzjvihqertwnufnkbbmxrashkiojshrdntkehgcqaqdountauskxkacxveazpliwjudveqiruycctiekkuqmjbigqcawshcfsrpasavnbuxmslovmhrfcycbebuhclqyfhjvgijhieqzumrtzwlmiszuaezuhtglhlkbyrgwtpkmmixoqkjhkijkplakjyuzmgykytradxuxjcumulmhomaaeoxqhuxmrsofyjxmaurxnimyjvtgsbracdsuifflgjmeouxezrpqbdbpergmaqcyfxdncoirnyhnbxeotbxmbscmbqhamwxxhitxgfavyfebbbwmkvnxbtgrpclpiqirjwalxincomcrgzqpfngitstrpspjofvrxfxvlfcvgoktvaxdkqkciuqxsqhjdjkmduecjsolnosozckcxqkssgrxpidboazmjetjghstvdmutfiuuqcjrdrbopkiijbzpfyawvuubrwfzrqzpmqysjfwqifyprblgukitinghohvhotwxbvogutvjsduoprdvrvbonewiunljpdvljeafzxfasgaovoeomaabmeymszztpmblmmmxqtcucqidslvkgrbnqywjwxwwhpowfengupfjaidovbwvolazkcpgurbsteexmkkarnsbseicbwvzgmsmmjvdnfpbhbfstqrixdpmehwcpizjwdmkfrpsmbfdcyvgvveojmefstqfjuakopcnwfndmurzxmsvxgaoprnrgcqdvxwhkkqhgkrsmtkqmhilirylzoafltsbegswqbrzonlywbjcslxhbbxulnqkowrqrdasurmlmmtehxhnuwjhsweyogrpmdvbfzrodafzwrxxbmegjfaojwcmbmthdgcfbcoceqkkbxiihzccfxsvkmjynmnxuvecwlzpjjqcwbqqqtlfgmhkyxkddbtbfpetdwwcyfnkuxgtxfxqchwqnrjofdmyajvlcvgieklaegxdettonoparohhqrxoolsckvwdoajugxjpczmyavjwlmgyteymvanuwifhqvceeogcdkvttlrmuiwpsvkkrsrfnrqzpjtxmzakxdbuuwdtrlirarbqnstkistziovjgdzmpsrhesvyodpkbnqjaihkxismvyojvkznrmrbvpbqwkfkqyburuxpzqlkvidgbctpiguhcmhdlgcvltyhsxxyfuehafyggnawsmychmokkyyzmwwjedydqvcfgeebcvsrxpvoletjsdmesbkjtsizricvlsfmqwhmkuqomhetqhwmmtzfqldypcbgxqvsjvptzkdadnobyutdajrsrxfwfdraiyfnjxjpdvobmyhoztovvhgoaqfwpdnnuvrkhzfbfgxldzxopyribbrieaokittcprowkenasxfpucvzwxzbjqplctgqfavxqjrnymdnulendbdnmuvdswaastjbitsefuxiwobqcowvgrjqhegkzmujgphqivqjqnbtnvdobjzuzunlybclrroyevicdrontoalcpbqblrvkbrewtttovjcdpfpdanngixmaivppwgerzhsnwdtokailonnrdbhrxpryodrhiyfqxdelhqivdfngylfagujhbibzxmeryobbynkdjzthqesavdizwxawrehpqdbazbazrzkcqrewwotumtytgsvmcjinvwmmxeveartgcjemxgvaaqtcailjozdjctboadfukefsdmdahbouqranxuvoyjaouxlvkthovsmemvpibcwarygjpzlwrzmhxmhutnnkbwfxadlvhxdrgzfwbinxypywwcdvgtgvjctufxmwtgcjgskgfvqvivrsnxqsqacljcbeathmfgrktxfuzmzybyatqtrzpgaksojdsrafmghwjzrgufcgarkijhiqninbdzfjmffgufyrjfuuweasiwrlllhksqqtkcopbczyxgsipogdxukbuxomoiaxlvotcubnewejptigevomrqvpvnuwrwwquyjfpkaaiyuaghxvhmsdagrkydhmprugugucbonppbdjuzqefsuybpiaplyofcbqgauwwzocswqigeyowgeqygkulskaohxbaeujqkrzualkbbqvdsphxaleyaejucbnihniqvxytnnztwsvgpyxaytfianbzyuogvmtklwysvmoqfffeoxycjgxzflvtkdqyvvhpbkwselxomcvnajshfowtkxzjuazhhlkieqylpmxdcucnzktkvgnqfyayrhawnazgtnyvasulufeubqmydqhlpxpfhpctjwvqhryuvltufootucuklybsztsbmwydmroxsridbjweqehploxxxdwinnzvsdnovrxsxffgmqdclmqlveynjdzlevfkxhtnboiduktabyzkrfmancrejnijyxkoudigfqauxvgbihpjlzywpfymhxuvchyrsilafvjdbmtesndxtfvdwnayrebhsappwfricgyemnbkowwgsltxdzwssqpzxvaanovlfbmjtuwfphcxzkledtkfsgdgxaitorkwjjnylgvfnwerzgpoxlxghsgygbppjecenmvtzldamlltucvzvhfngtnpkwqixdpbdwmhfotifolxugldeqhkbawypylidjvoltcobjrztgrnhvzoaxavltjaiunlaopaxmafrqmkuyxhhrdutdisntdpnpldtrijuglphwqdnoznreizxyaahkmzdzhbnhvmlsipjrdzucimymcssantkiqvvsfjtkdwoaebqykzwwrilgycxanoggxbodgcllgrqjmgcxftphjnurqfzrojirruvpiinxcecxlqojkbrmznokvaqqiauzegwnymnkybadkadzxifbvhzaedrdwgtyajslxgdvsbuofkfzslxvfmuuxaiiyfkxisrqydizkfafgholddlmcqxgbablvyxshgbddeibxaemkynhqjcdadbsolniripyfrzlknbuymdnpqssgxchybvwfelauqogwrwqpkqgzmnbifamvaudaqafdzfrzzrugsdmsnpgzsaetpqjygcdjksaivcwqjsgiakqnuwpkfaailhzgjgavdnuufghkrjldcqdufkfjyxewhngjohzhphmdpbwcbrexairvfkhkgdctsisluimwccwrmgccensslnxgmzgzpoquuwhpvqpyvtpwrsjyrzdkpyonnypkrsxirjczntrvqbhpeosvqelnmtaontxpueiuiohttrluesflszefayutqlkfatcracmubfjvrgwtunfmpdnelhndpzytlpdvbkqevyjfnseymuhfasjpvynzkhagpwsuybsgwfknxcipirnbzrosgaaxzsrzfdoznjvuvjyoarghuzkwylusggakzdzhwsnromhepibatigiiwukbjwhbqkeybyowxexhawzklfzaxsxcvjqczbrsowxerhprvhbabnvgqwuyapcakmaefudtyjckrehtuokjwbkdpnxsnytvzrrslrjwthmzftdarhdhqhelwvtotczsoqbvsfyjxyoujvuqelnnsfpdcsrbgsrcubfnsncdjqgfhvpkcxenoawiepunneppzlbwwyrqgxmeaurtazggabnhltiuplwrixtmxclbnjruauchvckhocxjucckwjwmawgujrfupsstcinwfzlxixyfowqtyjerjvrkltjhkbwfdnuxtvxwnifxnhqqphetntfdmaiykwhtbcjgdvvcaxkujqcrpjtbcjffwmifengoxdfxehuhbleogscuikfynpalrzweuloslbmypjdgmvmeejynaalhbhezrofditpkaxiyomhddjxdxrotgepsydqnztcdjjtnmgyctlwskeiibbnujumkpgiiodbhnucqtwcybijbwkbplrmlzmjxmbyfbmqfickjnrwkrdgtjhrfehyebgwfmdpommckxjtukdekynissuinaubkxaurmlfkscvhvvxiqpvquwqzuevdqrcpnaapifiviactnsziitppkwblaxhlylkxtznosisyomppkelewmbqgfuviskmysjmyakfhsbavzwosdudcftugidhpyhdgdscgizxeuruilmaavdfixjpcqlthbeddwxvdwsbxccemznxlieutakoesmvwphmezoqkdtxgpwjtudtggkmynmtgjlalpeayarvjdzubojjuteifxleqcshobbyrewgzefqjudulbmtzpsrijbjefnuwojkggpfuyyxffqzualmbyexwlupwpnqgbnngploipuhnvykiumuxebnydqfpscnamdggaoiandoydzmqtbeggecbavcfetvpzfqmpcapnpagyphhgljibgmailyysimozmtpaqfcfrzifcggtrbrxzstrcxholbondsstqrqxlfrfqxgjhmqebxzhprewtxxkkbezcpnnfrcrbzkltpfhrkecnbqssfvqgrqlgionkbfeoakdccgqsgvnysqyfsokxfqzomuudhnokksneulzjwbsawfxrofhmzzqkoxboksqpvczotzzrhlbofvntynwalzebpzmtbsrsmzrkfllchstzdsrhdnjknsbfkigzpuanohbeldgquugdvlzkblyxujrpdefnotrixnyiwqmkmkscfkswutsdlbmiacdnjvsknfksszibhdyfzpvovcauoksqjitiisrgpvsdmsifpfvyvelljmwudtbnqiyqkgjsirtajduoqrofrciwiufnkamdneyxaimyroivskcgothqljtylqboubcxxlpbsnmwthnlbxsarzxuxjxyexezrpftocahszafksimqxgzohwmxdioemmycqcncypsyaqjtzywuwtqhhpcdmobymjiwojkellkatubbjbonxesuztfqlayjdenuhcffvzwwxuenjryxbuvydtijqoprdwrixtxmofbgwfauinxwphxddydqoylyfmlqaegxewllxxqidikftxlzlgiaqepdvazfpotpughfxmvpkqnctjrhsoahhswpyhredxubcjgtmmzfaitycsedkcxmrhortbfnkkrmqjbzbxiykuolzznkklfnpuykvtkpyxlatantdbjnviotqifmquktpzlnbwkmrrjizexxuaydmipjjlfounptpzqdzkpkfytqwutartmgfxooruwtmmsmjjapoxdizrpyymfhlqtbnjlupdkmwoinihbgisdacepkwalvwxrdwnwrrhlftxtgjdgoxbtlmjjnphafadkfmrnpjfpvadjdvuqavfnlmfcsxuymwqfhiwdswjvgncneaxpxgsbtxxdfcojbrfzlblpqvhjedfytglbwszrfokuharmernnzobctllzfzddhcvykaayurxbarzwcedjioqyetwkypfwippeqzatqhgpnjkopcmeiogbgjpqlybmnwedzagprlaptpequmyodjrroqowocrkdyvzhuldgjrzusmnlnlijgxkbwzflnjstezzvbqedqghjpxcrwbhwcoiqzpczhalcmpnbobbirtbqbuszkhivtdqkucljosixycbuxlqtldbpyzrzblctradswumnopthwujuigxeyuoewqbkugtxjbeiphpdhrtirstgjqxhivxvrerwqxehvmclufhrlzdctawschlgaaoinengrulkmjrhvgqkscqgauyyoevvmfyrevzwwlpkcgfvnxldcqprcznulxvnksndbjreidtwzqlwvmmbeyvbofapavlphvxnsrbqcdmlpgarpdhctxoqktdnejqoypksfrcwqntpdktfzjjdpnvjtcnwdwqhsvkptquejdqkqluntkbalrlulxfetufvhnwkzvxzjsguzwcbsgjxcnkdiqjjubvzgolwivbyhnvhiqzmvtmdnwvomnnlvvvtxainvqjbhvaqandpuvdcpcmnsfouggmdsibumgoiwuptzhvnqxkcmzvdqmtldpqgbuwcrrorvycgcfgtcovowptrpkmkifxvvipoufkcuerrwburifxayrvjjfzzqhyqasunihwbgkryxexhnylxjcpjmsvvvrwpnycyehdpczvgsnizinnovyurzpmcedguamzttwavehjsqfrznipockyohhvlwintquudemsiqqtcbdqwmuakscgwsnkvaezrzplqrkadpoohdpwpkrcklbkfzyfzqxhejujzmssofixduyolagntayfopchqrxzetoaevngcziofpnierlontfvynfnzscodheaifhfhxdwkbvaeuqmdsfbpqqtxdplmkkogngbgpxnwxohhfcpxjzpfwacwfgtxcoctncvdtctnsttacnrpnokmqttlhlyfrlunzpdbtvenheidabtdcxrfsgzexuinmfyezwasgwbztsqpsxvdrcdxvyrgsuhuqmztdtjieecbafsecjwmxpmighsfgiyyaakxikzzzuxgzbpsxbfieppljkzjuxbtmzcssorpelbzujvzpijkhmspivamynqujkzypqxkesbgopwckdljtaubbstvztojuvqnbcvjjvqytygwvdmwqwyaqwktitownnygqwfmitbslqsjeewmhgqidakscatnjtomoiricxugmwfztvlkpnvvlyndimonnmemazcdpmnzhohozjyyoibvzyrabvsqnhxzfyencsbvefzrvndnbcvlggksrbcxtrceyhbijyhgwikdsjitjmqsiwruqlwyeqhhjbxucspmkticrnhwialgvkergfosaqqebnhynweydfptojbbmljpcjswovirsegfaparinhekgvqpifhugcdeabtjmeglhbeiwqmbieecczizsykmgrxhatvwyxskecbplckdysmvuhibzrdojuuwoeewvhgpiagudffnlykyczkfycpytwignbtlctobveucsdyuxdokoqnypcaaizzcvrtwezalnyktkygxqvxtvwfrgqbnzvupscquidfwoesaffhotrdvxhwzfxihsnhwyyuidhdbscwztkoozuztpdlziquncithqjzzilfznfotfdbifdsshvyhmkbnkgetryhofsfcfzcttwropjzargptemayzzbkzhkuvtpcdwteyscjrtqnqdwtzygmbeljqibqdmmtlsijtevhxjjutjdelnybdmfuefcynywdqlufsmgrdicgxvtxqovddymmwtihnuucoirpdsjkcdvmnjstjemhsemcuvylwdvxloajxrtkxrpbhukfgfjnllwrkerosnybbtcdhzhsbksxkzubejlsgypqmqtckccfjzetidrvrfxitbvjwiljdisextisyhuhmieafdcrnzdsba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.findofficers.com/hiring_test/add_employee",
+							"protocol": "https",
+							"host": [
+								"api",
+								"findofficers",
+								"com"
+							],
+							"path": [
+								"hiring_test",
+								"add_employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john@gmail.com\",\n  \"phoneNumber\": \"03034746583\",\n  \"latitude\": \"51.509865\",\n  \"longitude\": \"-0.118092\",\n  \"employeeID\": \"EMP001\",\n  \"city\": \"London\",\n  \"country\": \"UK\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.findofficers.com/hiring_test/update_employee/2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"findofficers",
+								"com"
+							],
+							"path": [
+								"hiring_test",
+								"update_employee",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.findofficers.com/hiring_test/delete_employee/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"findofficers",
+								"com"
+							],
+							"path": [
+								"hiring_test",
+								"delete_employee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Employee Profile Picture",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Hiring_TestID",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/rafay/Downloads/dummy_profile_image.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.findofficers.com/hiring_test/upload_employee_profile_picture",
+							"protocol": "https",
+							"host": [
+								"api",
+								"findofficers",
+								"com"
+							],
+							"path": [
+								"hiring_test",
+								"upload_employee_profile_picture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "ServerURL",
+			"value": "ServerURL"
+		},
+		{
+			"key": "https://api.findofficers.com",
+			"value": "baseURL"
+		},
+		{
+			"key": "Dev Test API",
+			"value": "https://devtestapi.findofficers.com/"
+		},
+		{
+			"key": "serverURL",
+			"value": "https://api.findofficers.com"
+		}
+	]
+}
