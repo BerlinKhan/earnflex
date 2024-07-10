@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import React from "react";
 import { SettingOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faMap, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 function Sidenav({ color, backgroundColor }) {
   const { pathname } = useLocation();
@@ -57,15 +57,15 @@ function Sidenav({ color, backgroundColor }) {
               <span className="label">Workers</span>
             </NavLink>
           </Menu.Item>
-          <Menu.Item key="settings">
-            <NavLink to="/settings">
+          <Menu.Item key="map">
+            <NavLink to="/map">
               <span
                 className="icon"
                 style={{ background: page === "profile" ? color : "" }}
               >
-                <SettingOutlined />
+                <FontAwesomeIcon icon={faMap} />
               </span>
-              <span>Settings</span>
+              <span>Map</span>
             </NavLink>
           </Menu.Item>
         </Menu>

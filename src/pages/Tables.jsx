@@ -31,6 +31,7 @@ import {
 
 import AddEmployeeModal from "../components/AddEmployeeModal"; // Import your new modal component
 import EditEmployeeModal from "../components/EditEmployeeModal"; // Import the edit modal component
+import { Link } from "react-router-dom";
 
 const { Title } = Typography;
 const { Search } = Input;
@@ -72,6 +73,7 @@ const Tables = () => {
         ...item,
         transport: Math.random() < 0.5 ? "Available" : "Not Available",
         industry: getRandomIndustry(),
+        profilecompletion: getRandomProfileCompletion()
       }));
 
       setData(updatedData);
@@ -115,6 +117,11 @@ const Tables = () => {
     ];
     const randomIndex = Math.floor(Math.random() * industries.length);
     return industries[randomIndex];
+  };
+  const getRandomProfileCompletion = () => {
+    const completion = [20,45, 50, 70, 85, 90 ,100];
+    const random = Math.floor(Math.random() * completion.length);
+    return completion[random];
   };
 
   const columns = [
@@ -175,11 +182,10 @@ const Tables = () => {
       title: "PROFILE COMPLETION",
       dataIndex: "profilecompletion",
       key: "profilecompletion",
-      sorter: (a, b) =>
-        calculateProfileCompletion(a) - calculateProfileCompletion(b),
+      sorter: (a, b) => a.profilecompletion - b.profilecompletion,
       render: (record) => (
         <Progress
-          percent={calculateProfileCompletion(record)}
+          percent={record}
           type="circle"
           size="small"
         />
@@ -189,7 +195,6 @@ const Tables = () => {
       title: "RATING",
       dataIndex: "rating",
       key: "rating",
-      sorter: (a, b) => getRandomRating(a) - getRandomRating(b),
       render: () => <Rate disabled defaultValue={getRandomRating()} />,
     },
     {
@@ -330,12 +335,14 @@ const Tables = () => {
           <Card
             bordered={false}
             className="criclebox tablespace mb-24"
-            title="Authors Table"
+            title="Workers"
             extra={
               <div style={{ display: "flex", gap: "10px" }}>
                 <Radio.Group defaultValue="a">
                   <Radio.Button value="a">List View</Radio.Button>
-                  <Radio.Button value="b">Map View</Radio.Button>
+                  <Link to="/map">
+                    <Radio.Button value="b">Map View</Radio.Button>
+                  </Link>
                 </Radio.Group>
                 <Search
                   placeholder="Search Worker"
