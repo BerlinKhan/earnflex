@@ -44,7 +44,7 @@ const Map = () => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDCLLoMCFxTZaqgEuARPe-SM4WJu7QnSIM">
+    <LoadScript googleMapsApiKey="AIzaSyAq_p-qa9mTOCaLeA4JuBMvfUClgHGjU8s">
       <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={5}>
         {employees.map((employee, index) => (
           <Marker
