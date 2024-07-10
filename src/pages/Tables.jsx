@@ -1,153 +1,313 @@
+// Tables.jsx
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Row,
   Col,
   Card,
   Radio,
   Table,
-  Upload,
-  message,
-  Progress,
+  Input,
   Button,
   Avatar,
   Typography,
+  Progress,
   Rate,
+  Modal,
 } from "antd";
-import { MoreOutlined, ToTopOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
-import ava1 from "../assets/images/logo-shopify.svg";
-import ava2 from "../assets/images/logo-atlassian.svg";
-import ava3 from "../assets/images/logo-slack.svg";
-import ava5 from "../assets/images/logo-jira.svg";
-import ava6 from "../assets/images/logo-invision.svg";
-import face2 from "../assets/images/face-2.jpg";
-import pencil from "../assets/images/pencil.svg";
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faIdBadge,
   faPhone,
+  faEye,
+  faUserPlus,
+} from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
+import {
+  faShieldAlt,
+  faSyringe,
+  faBroom,
+  faHardHat,
+  faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 
+import AddEmployeeModal from "../components/AddEmployeeModal"; // Import your new modal component
+
 const { Title } = Typography;
+const { Search } = Input;
 
-const formProps = {
-  name: "file",
-  action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-  headers: {
-    authorization: "authorization-text",
-  },
-  onChange(info) {
-    if (info.file.status !== "uploading") {
-      console.log(info.file, info.fileList);
+const API_BASE_URL = "/hiring_test";
+
+const Tables = () => {
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [activationCode, setActivationCode] = useState("");
+  const [viewActivationCode, setViewActivationCode] = useState("");
+  const [isViewModalVisible, setIsViewModalVisible] = useState(false);
+  const [isAddModalVisible, setIsAddModalVisible] = useState(false);
+  const [isEditModalVisible, setIsEditModalVisible] = useState(false);
+  const [editingEmployee, setEditingEmployee] = useState(null);
+
+  useEffect(() => {
+    getActivationCode();
+  }, []);
+
+  const getActivationCode = async () => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/get_activation_code`);
+      setActivationCode(response.data.activationCode);
+      fetchData(response.data.activationCode);
+    } catch (error) {
+      console.error("Error getting activation code:", error);
     }
-    if (info.file.status === "done") {
-      message.success(`${info.file.name} file uploaded successfully`);
-    } else if (info.file.status === "error") {
-      message.error(`${info.file.name} file upload failed.`);
+  };
+
+  const fetchData = async (activationCode) => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/get_all_employee`, {
+        activationCode,
+      });
+
+      const updatedData = response.data.map((item) => ({
+        ...item,
+        transport: Math.random() < 0.5 ? "Available" : "Not Available",
+        industry: getRandomIndustry(),
+      }));
+
+      setData(updatedData);
+      setFilteredData(updatedData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
-  },
-};
+  };
 
-const columns = [
-  {
-    title: "WORKER",
-    dataIndex: "worker",
-    key: "worker",
-    width: "32%",
-  },
-  {
-    title: "PROFILE COMPLETION",
-    dataIndex: "profilecompletion",
-    key: "profilecompletion",
-  },
-  {
-    title: "RATING",
-    dataIndex: "rating",
-    key: "rating",
-  },
-  {
-    title: "ACTIVATION CODE",
-    dataIndex: "activationcode",
-    key: "activationcode",
-  },
-  {
-    title: "TRANSPORT",
-    key: "transport",
-    dataIndex: "transport",
-  },
-  {
-    title: "INDUSTRY",
-    key: "industry",
-    dataIndex: "industry",
-  },
-  {
-    title: "ACTIONS",
-    key: "actions",
-    dataIndex: "actions",
-  },
-];
+  const getRandomRating = () => {
+    return Math.floor(Math.random() * 5) + 1;
+  };
 
-const data = [
-  {
-    key: "1",
-    worker: (
-      <>
+  const calculateProfileCompletion = (record) => {
+    if (!record) return Math.floor(Math.random() * 100); // Random completion if record is undefined
+
+    // Define the fields used to calculate profile completion
+    const { firstName, lastName, email, phoneNumber } = record;
+
+    // Total number of fields that should be filled to consider profile complete
+    const totalFields = 4; // Adjust this according to your fields
+
+    // Count filled fields
+    let filledFields = 0;
+    if (firstName) filledFields++;
+    if (lastName) filledFields++;
+    if (email) filledFields++;
+    if (phoneNumber) filledFields++;
+
+    // Calculate percentage
+    return Math.round((filledFields / totalFields) * 100);
+  };
+
+  const getRandomIndustry = () => {
+    const industries = [
+      { name: "Security", icon: faShieldAlt },
+      { name: "Cleaner", icon: faBroom },
+      { name: "Construction", icon: faHardHat },
+      { name: "Care", icon: faSyringe },
+      { name: "Hospitality", icon: faUtensils },
+    ];
+    const randomIndex = Math.floor(Math.random() * industries.length);
+    return industries[randomIndex];
+  };
+
+  const columns = [
+    {
+      title: "WORKER",
+      dataIndex: "worker",
+      key: "worker",
+      width: "32%",
+      sorter: (a, b) => a.worker.localeCompare(b.worker),
+      render: (text, record) => (
         <Avatar.Group>
-          <Avatar className="shape-avatar" shape="square" size={60} src={face2}></Avatar>
-          <div className="avatar-info" style={{display: "flex", flexDirection: "column", gap: 5}}>
-            <Title level={5}>Michael John</Title>
-            <div style={{display: "flex", flexDirection: "row", gap:10, alignItems: "center"}}>
-              <FontAwesomeIcon icon={faPhone} /> <p>michael@mail.com</p>
+          <Avatar
+            className="shape-avatar"
+            shape="square"
+            size={60}
+            src={record.profilePicture || undefined}
+            icon={!record.profilePicture && <FontAwesomeIcon icon={faUser} />}
+          ></Avatar>
+          <div
+            className="avatar-info"
+            style={{ display: "flex", flexDirection: "column", gap: 5 }}
+          >
+            <Title level={5}>{`${record.firstName} ${record.lastName}`}</Title>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
+                alignItems: "center",
+              }}
+            >
+              <FontAwesomeIcon icon={faPhone} /> <p>{record.email}</p>
             </div>
-            <div style={{display: "flex", flexDirection: "row",  gap:10,alignItems: "center"}}>
-              <FontAwesomeIcon icon={faEnvelope} /> <p>123456677</p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
+                alignItems: "center",
+              }}
+            >
+              <FontAwesomeIcon icon={faEnvelope} /> <p>{record.phoneNumber}</p>
             </div>
-            <div style={{display: "flex", flexDirection: "row", gap:10,alignItems: "center"}}>
-              <FontAwesomeIcon icon={faIdBadge} /> <p>at1223</p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
+                alignItems: "center",
+              }}
+            >
+              <FontAwesomeIcon icon={faIdBadge} /> <p>{record.employeeID}</p>
             </div>
           </div>
         </Avatar.Group>
-      </>
-    ),
-    profilecompletion: (
-      <>
-       <div className="ant-progress-project">
-          <Progress percent={30}  type="circle" size="small" />
-         </div>
-      </>
-    ),
-    rating: (
-      <>
-         <Rate disabled defaultValue={2} />
-      </>
-    ),
-    activationcode: (
-      <>
-       <Button type="primary" className="tag-primary">
-          View
-        </Button>
-      </>
-    ),
-    transport: "Bus",
-    industry: (
-      <>
-      <Avatar className="shape-avatar" shape="square" size={60} src={face2}></Avatar>
-      </>
-    ),
-    actions: (
-      <>
-        <Button type="link" color="#FFFFFF"><MoreOutlined /></Button>
-      </>
-    ),
-  },
-];
+      ),
+    },
+    {
+      title: "PROFILE COMPLETION",
+      dataIndex: "profilecompletion",
+      key: "profilecompletion",
+      sorter: (a, b) =>
+        calculateProfileCompletion(a) - calculateProfileCompletion(b),
+      render: (record) => (
+        <Progress
+          percent={calculateProfileCompletion(record)}
+          type="circle"
+          size="small"
+        />
+      ),
+    },
+    {
+      title: "RATING",
+      dataIndex: "rating",
+      key: "rating",
+      sorter: (a, b) => getRandomRating(a) - getRandomRating(b),
+      render: () => <Rate disabled defaultValue={getRandomRating()} />,
+    },
+    {
+      title: "TRANSPORT",
+      dataIndex: "transport",
+      key: "transport",
+      filters: [
+        { text: "Available", value: "Available" },
+        { text: "Not Available", value: "Not Available" },
+      ],
+      onFilter: (value, record) => record.transport.indexOf(value) === 0,
+      render: (text) => (
+        <span
+          className={`badge ${
+            text === "Available" ? "badge-green" : "badge-red"
+          }`}
+        >
+          {text}
+        </span>
+      ),
+    },
+    {
+      title: "INDUSTRY",
+      dataIndex: "industry",
+      key: "industry",
+      filters: [
+        { text: "Security", value: "Security" },
+        { text: "Cleaner", value: "Cleaner" },
+        { text: "Construction", value: "Construction" },
+        { text: "Care", value: "Care" },
+        { text: "Hospitality", value: "Hospitality" },
+      ],
+      onFilter: (value, record) =>
+        record.industry.name.toLowerCase().indexOf(value.toLowerCase()) === 0,
+      render: (record) => (
+        <div>
+          {record.industry && record.industry.icon && (
+            <FontAwesomeIcon icon={record.industry.icon} />
+          )}
+          <span style={{ marginLeft: 10 }}>{record.industry && record.industry.name}</span>
+        </div>
+      ),
+    },
+    {
+      title: "ACTIONS",
+      key: "actions",
+      render: (text, record) => (
+        <div>
+          <Button
+            type="link"
+            icon={<FontAwesomeIcon icon={faEye} />}
+            onClick={() => showViewModal(record)}
+          >
+            View
+          </Button>{" "}
+          <Button
+            type="link"
+            onClick={() => showEditModal(record)}
+            style={{ color: "#1890ff" }}
+          >
+            Edit
+          </Button>{" "}
+          <Button
+            type="link"
+            style={{ color: "#ff4d4f" }}
+            onClick={() => deleteEmployee(record.id)}
+          >
+            Delete
+          </Button>
+        </div>
+      ),
+    },
+  ];
 
-function Tables() {
-  const onChange = (e) => console.log(`radio checked:${e.target.value}`);
+  const handleSearch = (e) => {
+    const { value } = e.target;
+    setSearchText(value);
+    const filteredData = data.filter((record) =>
+      `${record.firstName} ${record.lastName}`
+        .toLowerCase()
+        .includes(value.toLowerCase())
+    );
+    setFilteredData(filteredData);
+  };
 
-  console.log("Data: ", data);
-  // console.log("Project Data: ", dataproject);
+  const handleAddEmployee = () => {
+    setIsAddModalVisible(true);
+  };
+
+  const showViewModal = (record) => {
+    setIsViewModalVisible(true);
+    setViewActivationCode(record.activationCode);
+  };
+
+  const showEditModal = (record) => {
+    setEditingEmployee(record);
+    setIsEditModalVisible(true);
+  };
+
+  const deleteEmployee = async (id) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/delete_employee/${id}`);
+      fetchData(activationCode);
+    } catch (error) {
+      console.error("Error deleting employee:", error);
+    }
+  };
+
+  const handleModalClose = () => {
+    setIsViewModalVisible(false);
+    setIsAddModalVisible(false);
+    setIsEditModalVisible(false);
+    setEditingEmployee(null);
+  };
 
   return (
     <div className="tabled">
@@ -158,20 +318,64 @@ function Tables() {
             className="criclebox tablespace mb-24"
             title="Authors Table"
             extra={
-              <Radio.Group onChange={onChange} defaultValue="a">
-                <Radio.Button value="a">All</Radio.Button>
-                <Radio.Button value="b">ONLINE</Radio.Button>
-              </Radio.Group>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <Radio.Group defaultValue="a">
+                  <Radio.Button value="a">List View</Radio.Button>
+                  <Radio.Button value="b">Map View</Radio.Button>
+                </Radio.Group>
+                <Search
+                  placeholder="Search Worker"
+                  value={searchText}
+                  onChange={handleSearch}
+                  style={{ width: 200 }}
+                />
+                <Button
+                  type="primary"
+                  icon={<FontAwesomeIcon icon={faUserPlus} />}
+                  onClick={handleAddEmployee}
+                >
+                  Add Employee
+                </Button>
+              </div>
             }
           >
             <div className="table-responsive">
-              <Table columns={columns} dataSource={data} pagination={false} className="ant-border-space" />
+              <Table
+                columns={columns}
+                dataSource={filteredData}
+                pagination={{ pageSize: 5 }}
+                className="ant-border-space"
+              />
             </div>
           </Card>
         </Col>
       </Row>
+
+      {/* View Activation Code Modal */}
+      <Modal
+        title="View Activation Code"
+        visible={isViewModalVisible}
+        onCancel={handleModalClose}
+        footer={null}
+      >
+        <p>{viewActivationCode}</p>
+      </Modal>
+
+      {/* Add Employee Modal */}
+      <AddEmployeeModal
+        visible={isAddModalVisible}
+        activationCode={activationCode}
+        onAdd={() => {
+          fetchData(activationCode);
+          handleModalClose();
+        }}
+        onCancel={handleModalClose}
+      />
+
+      {/* Edit Employee Modal */}
+      {/* Assume you have EditEmployeeModal component implementation */}
     </div>
   );
-}
+};
 
 export default Tables;
