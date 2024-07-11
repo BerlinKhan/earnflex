@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import axios from "axios";
 
-const API_BASE_URL = "/hiring_test";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "/hiring_test";
 
 const Map = () => {
   const [employees, setEmployees] = useState([]);

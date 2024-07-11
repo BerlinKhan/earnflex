@@ -36,7 +36,7 @@ import { Link } from "react-router-dom";
 const { Title } = Typography;
 const { Search } = Input;
 
-const API_BASE_URL = "/hiring_test";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "/hiring_test";
 
 const Tables = () => {
   const [data, setData] = useState([]);
@@ -87,25 +87,7 @@ const Tables = () => {
     return Math.floor(Math.random() * 5) + 1;
   };
 
-  const calculateProfileCompletion = (record) => {
-    if (!record) return Math.floor(Math.random() * 100); // Random completion if record is undefined
-
-    // Define the fields used to calculate profile completion
-    const { firstName, lastName, email, phoneNumber } = record;
-
-    // Total number of fields that should be filled to consider profile complete
-    const totalFields = 4; // Adjust this according to your fields
-
-    // Count filled fields
-    let filledFields = 0;
-    if (firstName) filledFields++;
-    if (lastName) filledFields++;
-    if (email) filledFields++;
-    if (phoneNumber) filledFields++;
-
-    // Calculate percentage
-    return Math.round((filledFields / totalFields) * 100);
-  };
+ 
 
   const getRandomIndustry = () => {
     const industries = [

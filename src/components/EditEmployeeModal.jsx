@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Modal } from "antd";
 import axios from "axios";
-
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "/hiring_test";
 const EditEmployeeModal = ({ visible, employee, onEdit, onCancel }) => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -13,13 +13,10 @@ const EditEmployeeModal = ({ visible, employee, onEdit, onCancel }) => {
     setLoading(true);
     try {
       const { Hiring_TestID, ...rest } = employee; // Get the employee ID
-      await axios.put(
-        `/hiring_test/update_employee/${Hiring_TestID}`,
-        {
-          ...values,
-          activationCode: employee.activationCode, // Include the activation code if required
-        }
-      );
+      await axios.put(`${API_BASE_URL}/update_employee/${Hiring_TestID}`, {
+        ...values,
+        activationCode: employee.activationCode, // Include the activation code if required
+      });
       form.resetFields();
       onEdit(); // Refresh data after successful edit
       Modal.success({

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Input, Button, Modal } from "antd";
 import axios from "axios";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "/hiring_test";
 const AddEmployeeForm = ({ activationCode, onAdd }) => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -9,7 +10,7 @@ const AddEmployeeForm = ({ activationCode, onAdd }) => {
   const handleSubmit = async (values) => {
     setLoading(true);
     try {
-      await axios.post("/hiring_test/add_employee", {
+      await axios.post(`${API_BASE_URL}/add_employee`, {
         ...values,
         activationCode,
       });
