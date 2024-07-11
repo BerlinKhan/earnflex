@@ -9,13 +9,10 @@ const AddEmployeeForm = ({ activationCode, onAdd }) => {
   const handleSubmit = async (values) => {
     setLoading(true);
     try {
-      await axios.post(
-        "https://api.findofficers.com/hiring_test/add_employee",
-        {
-          ...values,
-          activationCode,
-        }
-      );
+      await axios.post("/hiring_test/add_employee", {
+        ...values,
+        activationCode,
+      });
       form.resetFields();
       onAdd(); // Refresh data after successful addition
       Modal.success({
@@ -69,21 +66,21 @@ const AddEmployeeForm = ({ activationCode, onAdd }) => {
       <Form.Item
         name="latitude"
         label="Latitude"
-        rules={[{ required: false, message: "Please enter latitude" }]}
+        rules={[{ required: true, message: "Please enter latitude" }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
         name="longitude"
         label="Longitude"
-        rules={[{ required: false, message: "Please enter longitude" }]}
+        rules={[{ required: true, message: "Please enter longitude" }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
         name="employeeID"
         label="Employee ID"
-        rules={[{ required: false, message: "Please enter employee ID" }]}
+        rules={[{ required: true, message: "Please enter employee ID" }]}
       >
         <Input />
       </Form.Item>
@@ -97,7 +94,7 @@ const AddEmployeeForm = ({ activationCode, onAdd }) => {
       <Form.Item
         name="country"
         label="Country"
-        rules={[{ required: false, message: "Please enter country" }]}
+        rules={[{ required: true, message: "Please enter country" }]}
       >
         <Input />
       </Form.Item>

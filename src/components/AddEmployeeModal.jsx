@@ -8,7 +8,7 @@ const AddEmployeeModal = ({ visible, activationCode, onAdd, onCancel }) => {
   return (
     <Modal
       title="Add Employee"
-      visible={visible}
+      open={visible}
       onCancel={onCancel}
       footer={null}
     >

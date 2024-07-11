@@ -79,21 +79,21 @@ const EditEmployeeModal = ({ visible, employee, onEdit, onCancel }) => {
         <Form.Item
           name="latitude"
           label="Latitude"
-          rules={[{ required: false, message: "Please enter latitude" }]}
+          rules={[{ required: true, message: "Please enter latitude" }]}
         >
           <Input />
         </Form.Item>
         <Form.Item
           name="longitude"
           label="Longitude"
-          rules={[{ required: false, message: "Please enter longitude" }]}
+          rules={[{ required: true, message: "Please enter longitude" }]}
         >
           <Input />
         </Form.Item>
         <Form.Item
           name="employeeID"
           label="Employee ID"
-          rules={[{ required: false, message: "Please enter employee ID" }]}
+          rules={[{ required: true, message: "Please enter employee ID" }]}
         >
           <Input />
         </Form.Item>
@@ -107,7 +107,7 @@ const EditEmployeeModal = ({ visible, employee, onEdit, onCancel }) => {
         <Form.Item
           name="country"
           label="Country"
-          rules={[{ required: false, message: "Please enter country" }]}
+          rules={[{ required: true, message: "Please enter country" }]}
         >
           <Input />
         </Form.Item>
