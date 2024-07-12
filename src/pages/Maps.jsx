@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import axios from "axios";
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "/hiring_test";
-
+const GOOGLE_MAPS_KEY = process.env.GOOGLE_MAP_API_KEY;
 const Map = () => {
   const [employees, setEmployees] = useState([]);
   const [activationCode, setActivationCode] = useState("");
@@ -44,7 +44,7 @@ const Map = () => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyAq_p-qa9mTOCaLeA4JuBMvfUClgHGjU8s">
+    <LoadScript googleMapsApiKey={GOOGLE_MAPS_KEY}>
       <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={5}>
         {employees.map((employee, index) => (
           <Marker
